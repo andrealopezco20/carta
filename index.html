@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta de San Valentín ❤️</title>
+  <style>
+    body {
+      background: #f5e6ea;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .carta {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+      width: 600px;
+      max-width: 90%;
+      text-align: left;
+      position: relative;
+    }
+
+    .carta::before {
+      content: "💌";
+      font-size: 2rem;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d6336c;
+    }
+
+    .texto {
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      border-right: 2px solid #d6336c;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .firma {
+      margin-top: 20px;
+      text-align: right;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="carta">
+    <h1>Para Ti ❤️</h1>
+    <p id="typing" class="texto"></p>
+    <p class="firma">Con amor, Pan 💕</p>
+  </div>
+
+  <script>
+    const texto = `Desde que llegaste a mi vida todo se siente distinto,
+como si el mundo hubiera tomado colores más vivos.
+Cada momento contigo es un regalo, cada risa, cada palabra.
+
+Tal vez no lo diga siempre, pero quiero que sepas que eres mi todo,
+mi lugar seguro, mi alegría en los días grises.
+
+Gracias por existir y por estar a mi lado. 
+Te amo. ❤️`;
+
+    const speed = 50; // Velocidad de escritura (ms por letra)
+    let i = 0;
+
+    function typeWriter() {
+      if (i < texto.length) {
+        document.getElementById("typing").innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
